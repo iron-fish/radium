@@ -49,9 +49,6 @@ if_atomic! {
     if atomic(32) {
         use core::sync::atomic::{AtomicI32, AtomicU32};
     }
-    if atomic(64) {
-        use core::sync::atomic::{AtomicI64, AtomicU64};
-    }
     if atomic(ptr) {
         use core::sync::atomic::{AtomicIsize, AtomicPtr, AtomicUsize};
     }

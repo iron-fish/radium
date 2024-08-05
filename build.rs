@@ -98,7 +98,21 @@ fn main() -> Result<(), Box<dyn Error>> {
         _ => {}
     }
 
-    println!("cargo:rustc-cfg=radium_atomic_64");
+    if atomics.has_8 {
+        println!("cargo:rustc-cfg=radium_atomic_8");
+    }
+    if atomics.has_16 {
+        println!("cargo:rustc-cfg=radium_atomic_16");
+    }
+    if atomics.has_32 {
+        println!("cargo:rustc-cfg=radium_atomic_32");
+    }
+    if atomics.has_64 {
+        println!("cargo:rustc-cfg=radium_atomic_64");
+    }
+    if atomics.has_ptr {
+        println!("cargo:rustc-cfg=radium_atomic_ptr");
+    }
 
     Ok(())
 }
