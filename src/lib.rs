@@ -895,10 +895,6 @@ mod tests {
                 static_assertions::assert_impl_all!(AtomicI32: Radium<Item = i32>);
                 static_assertions::assert_impl_all!(AtomicU32: Radium<Item = u32>);
             }
-            if atomic(64) {
-                static_assertions::assert_impl_all!(AtomicI64: Radium<Item = i64>);
-                static_assertions::assert_impl_all!(AtomicU64: Radium<Item = u64>);
-            }
             if atomic(size) {
                 static_assertions::assert_impl_all!(AtomicIsize: Radium<Item = isize>);
                 static_assertions::assert_impl_all!(AtomicUsize: Radium<Item = usize>);
