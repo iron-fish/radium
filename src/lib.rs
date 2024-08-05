@@ -613,8 +613,6 @@ radium_int! {
     16: u16, AtomicU16;
     32: i32, AtomicI32;
     32: u32, AtomicU32;
-    64: i64, AtomicI64;
-    64: u64, AtomicU64;
     size: isize, AtomicIsize;
     size: usize, AtomicUsize;
 }
