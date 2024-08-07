@@ -49,9 +49,6 @@ if_atomic! {
     if atomic(32) {
         use core::sync::atomic::{AtomicI32, AtomicU32};
     }
-    if atomic(64) {
-        use core::sync::atomic::{AtomicI64, AtomicU64};
-    }
     if atomic(ptr) {
         use core::sync::atomic::{AtomicIsize, AtomicPtr, AtomicUsize};
     }
@@ -616,8 +613,6 @@ radium_int! {
     16: u16, AtomicU16;
     32: i32, AtomicI32;
     32: u32, AtomicU32;
-    64: i64, AtomicI64;
-    64: u64, AtomicU64;
     size: isize, AtomicIsize;
     size: usize, AtomicUsize;
 }
@@ -897,10 +892,6 @@ mod tests {
             if atomic(32) {
                 static_assertions::assert_impl_all!(AtomicI32: Radium<Item = i32>);
                 static_assertions::assert_impl_all!(AtomicU32: Radium<Item = u32>);
-            }
-            if atomic(64) {
-                static_assertions::assert_impl_all!(AtomicI64: Radium<Item = i64>);
-                static_assertions::assert_impl_all!(AtomicU64: Radium<Item = u64>);
             }
             if atomic(size) {
                 static_assertions::assert_impl_all!(AtomicIsize: Radium<Item = isize>);
